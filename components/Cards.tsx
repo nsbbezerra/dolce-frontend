@@ -46,7 +46,7 @@ const Cards: FC = () => {
             isFullWidth
             mt={3}
           >
-            Add ao Carrinho
+            Adicionar ao Carrinho
           </Button>
         </Box>
       </Box>
@@ -83,7 +83,7 @@ const Cards: FC = () => {
             isFullWidth
             mt={3}
           >
-            Add ao Carrinho
+            Adicionar ao Carrinho
           </Button>
         </Box>
       </Box>
@@ -120,7 +120,7 @@ const Cards: FC = () => {
             isFullWidth
             mt={3}
           >
-            Add ao Carrinho
+            Adicionar ao Carrinho
           </Button>
         </Box>
       </Box>
@@ -157,7 +157,7 @@ const Cards: FC = () => {
             isFullWidth
             mt={3}
           >
-            Add ao Carrinho
+            Adicionar ao Carrinho
           </Button>
         </Box>
       </Box>

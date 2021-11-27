@@ -11,6 +11,12 @@ import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { IconButton } from "@chakra-ui/button";
 
 const Quotes: FC = () => {
+  const breakPoints = [
+    { width: 320, itemsToShow: 1, itemsToScroll: 1 },
+    { width: 650, itemsToShow: 2, itemsToScroll: 2 },
+    { width: 850, itemsToShow: 3, itemsToScroll: 3 },
+  ];
+
   const CustomArrow = ({ type, onClick, isEdge }: RenderArrowProps) => {
     const pointer =
       type === "PREV" ? <IoIosArrowBack /> : <IoIosArrowForward />;
@@ -30,6 +36,7 @@ const Quotes: FC = () => {
 
   return (
     <Carousel
+      breakPoints={breakPoints}
       isRTL={false}
       itemsToShow={3}
       itemsToScroll={3}
@@ -62,7 +69,7 @@ const Quotes: FC = () => {
         shadow="md"
         borderWidth="1px"
         bg={useColorModeValue("white", "whiteAlpha.200")}
-        w="280px"
+        w="260px"
         p={3}
         h="min-content"
       >
@@ -100,7 +107,7 @@ const Quotes: FC = () => {
         shadow="md"
         borderWidth="1px"
         bg={useColorModeValue("white", "whiteAlpha.200")}
-        w="280px"
+        w="260px"
         p={3}
         h="min-content"
       >
@@ -138,7 +145,7 @@ const Quotes: FC = () => {
         shadow="md"
         borderWidth="1px"
         bg={useColorModeValue("white", "whiteAlpha.200")}
-        w="280px"
+        w="260px"
         p={3}
         h="min-content"
       >
@@ -176,7 +183,7 @@ const Quotes: FC = () => {
         shadow="md"
         borderWidth="1px"
         bg={useColorModeValue("white", "whiteAlpha.200")}
-        w="280px"
+        w="260px"
         p={3}
         h="min-content"
       >
@@ -214,7 +221,7 @@ const Quotes: FC = () => {
         shadow="md"
         borderWidth="1px"
         bg={useColorModeValue("white", "whiteAlpha.200")}
-        w="280px"
+        w="260px"
         p={3}
         h="min-content"
       >
@@ -252,7 +259,7 @@ const Quotes: FC = () => {
         shadow="md"
         borderWidth="1px"
         bg={useColorModeValue("white", "whiteAlpha.200")}
-        w="280px"
+        w="260px"
         p={3}
         h="min-content"
       >
