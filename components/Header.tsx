@@ -145,7 +145,7 @@ const Header: FC = () => {
                 height={80}
                 layout="responsive"
                 objectFit="contain"
-                alt="Dolce Encanto | Vestindo você em grande estilo."
+                alt={configs.imageAlt}
               />
             </Box>
             <HStack d={["none", "none", "flex", "flex", "flex"]}>
