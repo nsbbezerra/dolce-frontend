@@ -10,121 +10,155 @@ import { Button } from "@chakra-ui/button";
 const Cards: FC = () => {
   return (
     <Grid
-      templateColumns="repeat(auto-fit, minmax(300px, 300px))"
+      templateColumns="repeat(auto-fit, minmax(250px, 250px))"
       gap={5}
       justifyContent="center"
     >
       <Box rounded="md" borderWidth="1px" shadow="md" overflow="hidden">
         <Box w="100%">
           <Image
-            src="https://image.freepik.com/psd-gratuitas/promocao-de-produtos-e-modelo-de-banner-de-midia-social-para-maquina-de-passar-roupa_160623-152.jpg"
-            width={600}
-            height={600}
+            src="https://img.freepik.com/psd-gratuitas/relogio-cor-laranja-marca-produto-midias-sociais-post-banner_154386-52.jpg?size=338&ext=jpg"
+            width={450}
+            height={450}
             layout="responsive"
             alt={configs.imageAlt}
+            objectFit="cover"
           />
         </Box>
-        <Box p={3}>
-          <Rating />
+        <Box p={3} textAlign="center">
           <Heading
             fontSize="xl"
             color={useColorModeValue(configs.titles.light, configs.titles.dark)}
             mt={1}
             noOfLines={1}
+            fontWeight="semibold"
           >
-            Ferro de Passar
+            Terno Masculino Cinza
           </Heading>
-          <Text fontSize="xs" mt={1} noOfLines={2}>
-            It is a long established fact that a reader will be distracted by
-            the readable content of a page when looking at its layout.
-          </Text>
-          <Flex justify="flex-start" align="center" mt={3}>
-            <Button
-              size="sm"
-              colorScheme={configs.buttons}
-              leftIcon={<HiOutlineShoppingCart />}
-              mr={3}
-            >
-              Add ao Carrinho
-            </Button>
+          <Flex justify="center" align="center" mt={3}>
             <Heading fontSize="lg">R$ 79,90</Heading>
           </Flex>
+          <Rating isCentered={true} />
+          <Button
+            size="sm"
+            colorScheme={configs.buttons}
+            leftIcon={<HiOutlineShoppingCart />}
+            isFullWidth
+            mt={3}
+          >
+            Add ao Carrinho
+          </Button>
         </Box>
       </Box>
 
       <Box rounded="md" borderWidth="1px" shadow="md" overflow="hidden">
         <Box w="100%">
           <Image
-            src="https://image.freepik.com/psd-gratuitas/promocao-de-produtos-e-modelo-de-banner-de-midia-social-para-maquina-de-passar-roupa_160623-152.jpg"
-            width={600}
-            height={600}
+            src="https://img.freepik.com/psd-gratuitas/relogio-cor-laranja-marca-produto-midias-sociais-post-banner_154386-52.jpg?size=338&ext=jpg"
+            width={450}
+            height={450}
             layout="responsive"
             alt={configs.imageAlt}
+            objectFit="cover"
           />
         </Box>
-        <Box p={3}>
-          <Rating />
+        <Box p={3} textAlign="center">
           <Heading
             fontSize="xl"
             color={useColorModeValue(configs.titles.light, configs.titles.dark)}
             mt={1}
             noOfLines={1}
+            fontWeight="semibold"
           >
-            Ferro de Passar
+            Terno Masculino Cinza
           </Heading>
-          <Text fontSize="xs" mt={1} noOfLines={2}>
-            It is a long established fact that a reader will be distracted by
-            the readable content of a page when looking at its layout.
-          </Text>
-          <Flex justify="flex-start" align="center" mt={3}>
-            <Button
-              size="sm"
-              colorScheme={configs.buttons}
-              leftIcon={<HiOutlineShoppingCart />}
-              mr={3}
-            >
-              Add ao Carrinho
-            </Button>
+          <Flex justify="center" align="center" mt={3}>
             <Heading fontSize="lg">R$ 79,90</Heading>
           </Flex>
+          <Rating isCentered={true} />
+          <Button
+            size="sm"
+            colorScheme={configs.buttons}
+            leftIcon={<HiOutlineShoppingCart />}
+            isFullWidth
+            mt={3}
+          >
+            Add ao Carrinho
+          </Button>
         </Box>
       </Box>
 
       <Box rounded="md" borderWidth="1px" shadow="md" overflow="hidden">
         <Box w="100%">
           <Image
-            src="https://image.freepik.com/psd-gratuitas/promocao-de-produtos-e-modelo-de-banner-de-midia-social-para-maquina-de-passar-roupa_160623-152.jpg"
-            width={600}
-            height={600}
+            src="https://img.freepik.com/psd-gratuitas/relogio-cor-laranja-marca-produto-midias-sociais-post-banner_154386-52.jpg?size=338&ext=jpg"
+            width={450}
+            height={450}
             layout="responsive"
             alt={configs.imageAlt}
+            objectFit="cover"
           />
         </Box>
-        <Box p={3}>
-          <Rating />
+        <Box p={3} textAlign="center">
           <Heading
             fontSize="xl"
             color={useColorModeValue(configs.titles.light, configs.titles.dark)}
             mt={1}
             noOfLines={1}
+            fontWeight="semibold"
           >
-            Ferro de Passar
+            Terno Masculino Cinza
           </Heading>
-          <Text fontSize="xs" mt={1} noOfLines={2}>
-            It is a long established fact that a reader will be distracted by
-            the readable content of a page when looking at its layout.
-          </Text>
-          <Flex justify="flex-start" align="center" mt={3}>
-            <Button
-              size="sm"
-              colorScheme={configs.buttons}
-              leftIcon={<HiOutlineShoppingCart />}
-              mr={3}
-            >
-              Add ao Carrinho
-            </Button>
+          <Flex justify="center" align="center" mt={3}>
             <Heading fontSize="lg">R$ 79,90</Heading>
           </Flex>
+          <Rating isCentered={true} />
+          <Button
+            size="sm"
+            colorScheme={configs.buttons}
+            leftIcon={<HiOutlineShoppingCart />}
+            isFullWidth
+            mt={3}
+          >
+            Add ao Carrinho
+          </Button>
+        </Box>
+      </Box>
+
+      <Box rounded="md" borderWidth="1px" shadow="md" overflow="hidden">
+        <Box w="100%">
+          <Image
+            src="https://img.freepik.com/psd-gratuitas/relogio-cor-laranja-marca-produto-midias-sociais-post-banner_154386-52.jpg?size=338&ext=jpg"
+            width={450}
+            height={450}
+            layout="responsive"
+            alt={configs.imageAlt}
+            objectFit="cover"
+          />
+        </Box>
+        <Box p={3} textAlign="center">
+          <Heading
+            fontSize="xl"
+            color={useColorModeValue(configs.titles.light, configs.titles.dark)}
+            mt={1}
+            noOfLines={1}
+            fontWeight="semibold"
+          >
+            Terno Masculino Cinza
+          </Heading>
+          <Flex justify="center" align="center" mt={3}>
+            <Heading fontSize="lg">R$ 79,90</Heading>
+          </Flex>
+          <Rating isCentered={true} />
+          <Button
+            size="sm"
+            colorScheme={configs.buttons}
+            leftIcon={<HiOutlineShoppingCart />}
+            isFullWidth
+            mt={3}
+          >
+            Add ao Carrinho
+          </Button>
         </Box>
       </Box>
     </Grid>

@@ -10,7 +10,7 @@ const configs = {
   },
   titles: {
     dark: "yellow.200",
-    light: "yellow.800",
+    light: "yellow.600",
   },
   stars: {
     active: {

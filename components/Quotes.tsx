@@ -1,322 +1,289 @@
+import { useColorModeValue } from "@chakra-ui/color-mode";
 import { Box, Flex, Heading, HStack, Text } from "@chakra-ui/layout";
 import { FC } from "react";
-import { Carousel } from "@trendyol-js/react-carousel";
+import Carousel, { RenderArrowProps } from "react-elastic-carousel";
 import Image from "next/image";
 import { configs } from "../configs";
 import Rating from "./Rating";
-import { useColorModeValue } from "@chakra-ui/color-mode";
-import Icon from "@chakra-ui/icon";
 import { FaQuoteRight } from "react-icons/fa";
-import { HiArrowLeft } from "react-icons/hi";
+import Icon from "@chakra-ui/icon";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import { IconButton } from "@chakra-ui/button";
 
 const Quotes: FC = () => {
+  const CustomArrow = ({ type, onClick, isEdge }: RenderArrowProps) => {
+    const pointer =
+      type === "PREV" ? <IoIosArrowBack /> : <IoIosArrowForward />;
+    return (
+      <IconButton
+        onClick={onClick}
+        disabled={isEdge}
+        aria-label="Search database"
+        icon={pointer}
+        fontSize="3xl"
+        variant="link"
+        colorScheme={configs.buttons}
+        _focus={{ outline: "none" }}
+      />
+    );
+  };
+
   return (
     <Carousel
-      show={3.5}
-      slide={3}
-      swiping={true}
-      leftArrow={
-        <Flex align="center" h="100%" p={3}>
-          <Icon as={IoIosArrowBack} cursor="pointer" />
-        </Flex>
-      }
-      rightArrow={
-        <Flex align="center" h="100%" p={3}>
-          <Icon as={IoIosArrowForward} cursor="pointer" />
-        </Flex>
-      }
+      isRTL={false}
+      itemsToShow={3}
+      itemsToScroll={3}
+      renderArrow={CustomArrow}
+      itemPadding={[8, 8]}
+      renderPagination={({ pages, activePage, onClick }) => {
+        return (
+          <Flex mt={3}>
+            {pages.map((page) => {
+              const isActivePage = activePage === page;
+              return (
+                <Box
+                  w="15px"
+                  h="15px"
+                  shadow="sm"
+                  bg={isActivePage ? "yellow.400" : "yellow.100"}
+                  key={page}
+                  onClick={() => onClick(page.toString())}
+                  borderRadius="50%"
+                  mr={1}
+                />
+              );
+            })}
+          </Flex>
+        );
+      }}
     >
       <Box
-        w="270px"
-        h="min-content"
-        borderWidth="1px"
         rounded="md"
         shadow="md"
-        background={"whiteAlpha.200"}
+        borderWidth="1px"
+        bg={useColorModeValue("white", "whiteAlpha.200")}
+        w="280px"
+        p={3}
+        h="min-content"
       >
-        <Flex p={2} align="center" justify="space-between">
+        <Flex justify="space-between" align="center">
           <HStack>
             <Box w="60px" h="60px" rounded="full" overflow="hidden">
               <Image
-                width={300}
-                height={300}
-                layout="responsive"
                 alt={configs.imageAlt}
                 src="https://image.freepik.com/free-photo/front-view-person-with-short-hair_23-2148749599.jpg"
+                width={200}
+                height={200}
+                layout="responsive"
                 objectFit="cover"
               />
             </Box>
             <Box>
-              <Heading
-                fontSize="sm"
-                color={useColorModeValue(
-                  configs.titles.light,
-                  configs.titles.dark
-                )}
-              >
-                Natanael Bezerra
-              </Heading>
+              <Heading fontSize="sm">Natanael Bezerra</Heading>
               <Rating />
             </Box>
           </HStack>
           <Icon
             as={FaQuoteRight}
             fontSize="4xl"
-            color={useColorModeValue("blackAlpha.300", "whiteAlpha.300")}
+            color={useColorModeValue("blackAlpha.400", "whiteAlpha.300")}
           />
         </Flex>
-        <Box p={2} textAlign="left">
-          <Text fontSize="sm">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit fugiat
-            consequuntur repellendus aperiam deserunt nihil, corporis fugit
-            voluptatibus voluptate totam neque illo placeat eius quis laborum
-            aspernatur quibusdam. Ipsum, magni.
-          </Text>
-        </Box>
+        <Text mt={3} fontSize="sm">
+          É um fato conhecido de todos que um leitor se distrairá com o conteúdo
+          de texto legível de uma página quando estiver examinando sua
+          diagramação.
+        </Text>
       </Box>
       <Box
-        w="270px"
-        h="min-content"
-        borderWidth="1px"
         rounded="md"
         shadow="md"
-        background={"whiteAlpha.200"}
+        borderWidth="1px"
+        bg={useColorModeValue("white", "whiteAlpha.200")}
+        w="280px"
+        p={3}
+        h="min-content"
       >
-        <Flex p={2} align="center" justify="space-between">
+        <Flex justify="space-between" align="center">
           <HStack>
             <Box w="60px" h="60px" rounded="full" overflow="hidden">
               <Image
-                width={300}
-                height={300}
-                layout="responsive"
                 alt={configs.imageAlt}
                 src="https://image.freepik.com/free-photo/front-view-person-with-short-hair_23-2148749599.jpg"
+                width={200}
+                height={200}
+                layout="responsive"
                 objectFit="cover"
               />
             </Box>
             <Box>
-              <Heading
-                fontSize="sm"
-                color={useColorModeValue(
-                  configs.titles.light,
-                  configs.titles.dark
-                )}
-              >
-                Natanael Bezerra
-              </Heading>
+              <Heading fontSize="sm">Natanael Bezerra</Heading>
               <Rating />
             </Box>
           </HStack>
           <Icon
             as={FaQuoteRight}
             fontSize="4xl"
-            color={useColorModeValue("blackAlpha.300", "whiteAlpha.300")}
+            color={useColorModeValue("blackAlpha.400", "whiteAlpha.300")}
           />
         </Flex>
-        <Box p={2}>
-          <Text fontSize="sm" textAlign="left">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit fugiat
-            consequuntur repellendus aperiam deserunt nihil, corporis fugit
-            voluptatibus voluptate totam neque illo placeat eius quis laborum
-            aspernatur quibusdam. Ipsum, magni.
-          </Text>
-        </Box>
+        <Text mt={3} fontSize="sm">
+          É um fato conhecido de todos que um leitor se distrairá com o conteúdo
+          de texto legível de uma página quando estiver examinando sua
+          diagramação.
+        </Text>
       </Box>
       <Box
-        w="270px"
-        h="min-content"
-        borderWidth="1px"
         rounded="md"
         shadow="md"
-        background={"whiteAlpha.200"}
+        borderWidth="1px"
+        bg={useColorModeValue("white", "whiteAlpha.200")}
+        w="280px"
+        p={3}
+        h="min-content"
       >
-        <Flex p={2} align="center" justify="space-between">
+        <Flex justify="space-between" align="center">
           <HStack>
             <Box w="60px" h="60px" rounded="full" overflow="hidden">
               <Image
-                width={300}
-                height={300}
-                layout="responsive"
                 alt={configs.imageAlt}
                 src="https://image.freepik.com/free-photo/front-view-person-with-short-hair_23-2148749599.jpg"
+                width={200}
+                height={200}
+                layout="responsive"
                 objectFit="cover"
               />
             </Box>
             <Box>
-              <Heading
-                fontSize="sm"
-                color={useColorModeValue(
-                  configs.titles.light,
-                  configs.titles.dark
-                )}
-              >
-                Natanael Bezerra
-              </Heading>
+              <Heading fontSize="sm">Natanael Bezerra</Heading>
               <Rating />
             </Box>
           </HStack>
           <Icon
             as={FaQuoteRight}
             fontSize="4xl"
-            color={useColorModeValue("blackAlpha.300", "whiteAlpha.300")}
+            color={useColorModeValue("blackAlpha.400", "whiteAlpha.300")}
           />
         </Flex>
-        <Box p={2}>
-          <Text fontSize="sm" textAlign="left">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit fugiat
-            consequuntur repellendus aperiam deserunt nihil, corporis fugit
-            voluptatibus voluptate totam neque illo placeat eius quis laborum
-            aspernatur quibusdam. Ipsum, magni.
-          </Text>
-        </Box>
+        <Text mt={3} fontSize="sm">
+          É um fato conhecido de todos que um leitor se distrairá com o conteúdo
+          de texto legível de uma página quando estiver examinando sua
+          diagramação.
+        </Text>
       </Box>
-
       <Box
-        w="270px"
-        h="min-content"
-        borderWidth="1px"
         rounded="md"
         shadow="md"
-        background={"whiteAlpha.200"}
+        borderWidth="1px"
+        bg={useColorModeValue("white", "whiteAlpha.200")}
+        w="280px"
+        p={3}
+        h="min-content"
       >
-        <Flex p={2} align="center" justify="space-between">
+        <Flex justify="space-between" align="center">
           <HStack>
             <Box w="60px" h="60px" rounded="full" overflow="hidden">
               <Image
-                width={300}
-                height={300}
-                layout="responsive"
                 alt={configs.imageAlt}
                 src="https://image.freepik.com/free-photo/front-view-person-with-short-hair_23-2148749599.jpg"
+                width={200}
+                height={200}
+                layout="responsive"
                 objectFit="cover"
               />
             </Box>
             <Box>
-              <Heading
-                fontSize="sm"
-                color={useColorModeValue(
-                  configs.titles.light,
-                  configs.titles.dark
-                )}
-              >
-                Natanael Bezerra
-              </Heading>
+              <Heading fontSize="sm">Natanael Bezerra</Heading>
               <Rating />
             </Box>
           </HStack>
           <Icon
             as={FaQuoteRight}
             fontSize="4xl"
-            color={useColorModeValue("blackAlpha.300", "whiteAlpha.300")}
+            color={useColorModeValue("blackAlpha.400", "whiteAlpha.300")}
           />
         </Flex>
-        <Box p={2}>
-          <Text fontSize="sm" textAlign="left">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit fugiat
-            consequuntur repellendus aperiam deserunt nihil, corporis fugit
-            voluptatibus voluptate totam neque illo placeat eius quis laborum
-            aspernatur quibusdam. Ipsum, magni.
-          </Text>
-        </Box>
+        <Text mt={3} fontSize="sm">
+          É um fato conhecido de todos que um leitor se distrairá com o conteúdo
+          de texto legível de uma página quando estiver examinando sua
+          diagramação.
+        </Text>
       </Box>
-
       <Box
-        w="270px"
-        h="min-content"
-        borderWidth="1px"
         rounded="md"
         shadow="md"
-        background={"whiteAlpha.200"}
+        borderWidth="1px"
+        bg={useColorModeValue("white", "whiteAlpha.200")}
+        w="280px"
+        p={3}
+        h="min-content"
       >
-        <Flex p={2} align="center" justify="space-between">
+        <Flex justify="space-between" align="center">
           <HStack>
             <Box w="60px" h="60px" rounded="full" overflow="hidden">
               <Image
-                width={300}
-                height={300}
-                layout="responsive"
                 alt={configs.imageAlt}
                 src="https://image.freepik.com/free-photo/front-view-person-with-short-hair_23-2148749599.jpg"
+                width={200}
+                height={200}
+                layout="responsive"
                 objectFit="cover"
               />
             </Box>
             <Box>
-              <Heading
-                fontSize="sm"
-                color={useColorModeValue(
-                  configs.titles.light,
-                  configs.titles.dark
-                )}
-              >
-                Natanael Bezerra
-              </Heading>
+              <Heading fontSize="sm">Natanael Bezerra</Heading>
               <Rating />
             </Box>
           </HStack>
           <Icon
             as={FaQuoteRight}
             fontSize="4xl"
-            color={useColorModeValue("blackAlpha.300", "whiteAlpha.300")}
+            color={useColorModeValue("blackAlpha.400", "whiteAlpha.300")}
           />
         </Flex>
-        <Box p={2}>
-          <Text fontSize="sm" textAlign="left">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit fugiat
-            consequuntur repellendus aperiam deserunt nihil, corporis fugit
-            voluptatibus voluptate totam neque illo placeat eius quis laborum
-            aspernatur quibusdam. Ipsum, magni.
-          </Text>
-        </Box>
+        <Text mt={3} fontSize="sm">
+          É um fato conhecido de todos que um leitor se distrairá com o conteúdo
+          de texto legível de uma página quando estiver examinando sua
+          diagramação.
+        </Text>
       </Box>
-
       <Box
-        w="270px"
-        h="min-content"
-        borderWidth="1px"
         rounded="md"
         shadow="md"
-        background={"whiteAlpha.200"}
+        borderWidth="1px"
+        bg={useColorModeValue("white", "whiteAlpha.200")}
+        w="280px"
+        p={3}
+        h="min-content"
       >
-        <Flex p={2} align="center" justify="space-between">
+        <Flex justify="space-between" align="center">
           <HStack>
             <Box w="60px" h="60px" rounded="full" overflow="hidden">
               <Image
-                width={300}
-                height={300}
-                layout="responsive"
                 alt={configs.imageAlt}
                 src="https://image.freepik.com/free-photo/front-view-person-with-short-hair_23-2148749599.jpg"
+                width={200}
+                height={200}
+                layout="responsive"
                 objectFit="cover"
               />
             </Box>
             <Box>
-              <Heading
-                fontSize="sm"
-                color={useColorModeValue(
-                  configs.titles.light,
-                  configs.titles.dark
-                )}
-              >
-                Natanael Bezerra
-              </Heading>
+              <Heading fontSize="sm">Natanael Bezerra</Heading>
               <Rating />
             </Box>
           </HStack>
           <Icon
             as={FaQuoteRight}
             fontSize="4xl"
-            color={useColorModeValue("blackAlpha.300", "whiteAlpha.300")}
+            color={useColorModeValue("blackAlpha.400", "whiteAlpha.300")}
           />
         </Flex>
-        <Box p={2}>
-          <Text fontSize="sm" textAlign="left">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit fugiat
-            consequuntur repellendus aperiam deserunt nihil, corporis fugit
-            voluptatibus voluptate totam neque illo placeat eius quis laborum
-            aspernatur quibusdam. Ipsum, magni.
-          </Text>
-        </Box>
+        <Text mt={3} fontSize="sm">
+          É um fato conhecido de todos que um leitor se distrairá com o conteúdo
+          de texto legível de uma página quando estiver examinando sua
+          diagramação.
+        </Text>
       </Box>
     </Carousel>
   );

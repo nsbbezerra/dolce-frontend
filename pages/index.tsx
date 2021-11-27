@@ -1,12 +1,20 @@
 import { useColorModeValue } from "@chakra-ui/color-mode";
-import { Box, Container, Flex, Grid, Heading, Text } from "@chakra-ui/layout";
+import {
+  Box,
+  Center,
+  Container,
+  Flex,
+  Grid,
+  Heading,
+  Text,
+} from "@chakra-ui/layout";
 import type { NextPage } from "next";
 import Banner from "../components/Banner";
 import Cards from "../components/Cards";
 import Header from "../components/Header";
 import { configs } from "../configs";
 import Image from "next/image";
-import { FaShippingFast, FaQuoteRight } from "react-icons/fa";
+import { FaShippingFast } from "react-icons/fa";
 import { HiArrowRight, HiCurrencyDollar, HiPhone } from "react-icons/hi";
 import Icon from "@chakra-ui/icon";
 import { Button } from "@chakra-ui/button";
@@ -18,25 +26,30 @@ const Home: NextPage = () => {
       <Header />
       <Banner />
 
-      <Container maxW="5xl" mt={20}>
-        <Flex
-          justify="center"
-          align="center"
-          textAlign="center"
-          direction="column"
-          mb={10}
-        >
-          <Text
-            fontWeight="bold"
-            fontSize="lg"
+      <Container maxW="6xl" mt={20}>
+        <Flex justify="center" align="center" textAlign="center" mb={10}>
+          <Heading
+            fontSize="3xl"
             color={useColorModeValue(configs.titles.light, configs.titles.dark)}
+            mr={2}
           >
-            Nossos Produtos
-          </Text>
-          <Heading fontSize="3xl">Os mais Populares</Heading>
+            Produtos
+          </Heading>
+          <Heading fontSize="3xl">Exclusivos</Heading>
         </Flex>
 
         <Cards />
+
+        <Center>
+          <Button
+            rightIcon={<HiArrowRight />}
+            colorScheme={configs.buttons}
+            variant="outline"
+            mt={10}
+          >
+            Mais Produtos
+          </Button>
+        </Center>
       </Container>
 
       <Box
@@ -183,25 +196,59 @@ const Home: NextPage = () => {
         </Container>
       </Box>
 
-      <Container mt={20} maxW="6xl">
+      <Container maxW="6xl" mt={20}>
+        <Flex justify="center" align="center" textAlign="center" mb={10}>
+          <Heading
+            fontSize="3xl"
+            color={useColorModeValue(configs.titles.light, configs.titles.dark)}
+            mr={2}
+          >
+            Novidades que
+          </Heading>
+          <Heading fontSize="3xl">chegaram Pra Você</Heading>
+        </Flex>
+
+        <Cards />
+
+        <Center>
+          <Button
+            rightIcon={<HiArrowRight />}
+            colorScheme={configs.buttons}
+            variant="outline"
+            mt={10}
+          >
+            Mais Novidades
+          </Button>
+        </Center>
+
         <Flex
           justify="center"
           align="center"
           textAlign="center"
-          direction="column"
           mb={10}
+          mt={20}
         >
-          <Text
-            fontWeight="bold"
-            fontSize="lg"
+          <Heading
+            fontSize="3xl"
             color={useColorModeValue(configs.titles.light, configs.titles.dark)}
+            mr={2}
           >
-            Novidades!
-          </Text>
-          <Heading fontSize="3xl">Os mais Recentes</Heading>
+            Nossas
+          </Heading>
+          <Heading fontSize="3xl">Ofertas</Heading>
         </Flex>
 
         <Cards />
+        <Center>
+          <Button
+            rightIcon={<HiArrowRight />}
+            colorScheme={configs.buttons}
+            variant="outline"
+            mt={10}
+          >
+            Mais Ofertas
+          </Button>
+        </Center>
       </Container>
 
       <Box
@@ -210,27 +257,17 @@ const Home: NextPage = () => {
         pb={10}
         mt={20}
       >
-        <Container maxW="6xl">
-          <Flex
-            justify="center"
-            align="center"
-            textAlign="center"
-            direction="column"
-            mb={10}
+        <Flex justify="center" align="center" textAlign="center" mb={10}>
+          <Heading
+            fontSize="3xl"
+            color={useColorModeValue(configs.titles.light, configs.titles.dark)}
+            mr={2}
           >
-            <Text
-              fontWeight="bold"
-              fontSize="lg"
-              color={useColorModeValue(
-                configs.titles.light,
-                configs.titles.dark
-              )}
-            >
-              Avaliações de Nossos Clientes
-            </Text>
-            <Heading fontSize="3xl">Os que eles dizem</Heading>
-          </Flex>
-
+            Nossas
+          </Heading>
+          <Heading fontSize="3xl">Avaliações</Heading>
+        </Flex>
+        <Container maxW="6xl">
           <Quotes />
         </Container>
       </Box>
